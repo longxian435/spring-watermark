@@ -53,7 +53,7 @@ public class ImageWatermarkService {
             int xInterval = Const.X_INTERVAL;
             int yInterval = Const.Y_INTERVAL;
 
-            double count = 1.5;
+           double count = 1.2;
             while ( x < width*count ) {  // 循环添加多个水印logo
                 y = -height / 2;
                 while( y < height*count ) {
@@ -62,7 +62,9 @@ public class ImageWatermarkService {
                 }
                 x += markWidth + xInterval;
             }
-
+           //=========盖公章的代码只启用下方代码即可  开始====
+           //g.drawImage(imageLogo, x, y, null);  // ④
+           //=========盖公章的代码只启用下方代码即可  结束====
             g.dispose();
 
             os = new FileOutputStream(realUploadPath + "/" + imgWithWatermarkFileName);
